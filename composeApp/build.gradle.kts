@@ -66,6 +66,11 @@ kotlin {
 
             // Ktor
             implementation(thirdPartyLibs.ktor.client.core)
+            implementation(thirdPartyLibs.ktor.client.cio)
+            implementation(thirdPartyLibs.ktor.client.logging)
+
+            // Logger
+            implementation(thirdPartyLibs.napier.logger)
 
             // Multiplatform ViewModel
             implementation(kotlinLibs.lifecycle.viewmodel.compose)

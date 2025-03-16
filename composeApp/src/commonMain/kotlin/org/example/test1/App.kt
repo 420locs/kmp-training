@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -18,7 +19,10 @@ import testwebapp.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
-fun App() {
+fun App(viewModel: SampleViewModel = viewModel { SampleViewModel() }) {
+//    LaunchedEffect(viewModel){
+//        viewModel.test()
+//    }
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -30,6 +34,17 @@ fun App() {
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")
+                    val todo = viewModel.todo
+                    when {
+                        todo == null -> Text("Cảm giác hơi ngu ngu")
+                        todo.isNotEmpty() -> {
+                            Text("And we have ${todo.size}")
+                        }
+                        else -> {
+                            Text("Call api ngu")
+                        }
+
+                    }
                 }
             }
         }
