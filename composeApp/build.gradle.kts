@@ -68,12 +68,20 @@ kotlin {
             implementation(thirdPartyLibs.ktor.client.core)
             implementation(thirdPartyLibs.ktor.client.cio)
             implementation(thirdPartyLibs.ktor.client.logging)
+            implementation(thirdPartyLibs.ktor.client.negotiation)
+            implementation(thirdPartyLibs.ktor.serialization)
 
             // Logger
             implementation(thirdPartyLibs.napier.logger)
 
             // Multiplatform ViewModel
             implementation(kotlinLibs.lifecycle.viewmodel.compose)
+        }
+
+        iosMain.dependencies {
+
+            // Ktor Engine
+            implementation(thirdPartyLibs.ktor.client.darwin)
         }
     }
 }

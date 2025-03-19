@@ -8,6 +8,7 @@ ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 ktor-client-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 napier-logger = { module = "io.github.aakira:napier", version.ref = "napierVersion" }
 
