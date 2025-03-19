@@ -1,7 +1,9 @@
 package org.example.test1
 
-interface Platform {
-    val name: String
+enum class Platform {
+    Android,
+    Ios,
+    Web
 }
 
 expect fun getPlatform(): Platform
