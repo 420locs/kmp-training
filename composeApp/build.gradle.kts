@@ -74,8 +74,14 @@ kotlin {
             // Logger
             implementation(thirdPartyLibs.napier.logger)
 
+            // Multiplatform Compose Navigation
+            implementation(kotlinLibs.kmp.navigation.compose)
+
             // Multiplatform ViewModel
             implementation(kotlinLibs.lifecycle.viewmodel.compose)
+
+            // Kotlin Datetime
+            implementation(kotlinLibs.kotlin.datetime)
         }
 
         iosMain.dependencies {
